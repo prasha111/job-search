@@ -22,7 +22,7 @@ function App() {
    {jobData.map((some, index) => (
   <div
     key={index}
-    className="bg-red-50 rounded-xl h-[250px] w-[500px] shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:bg-red-100"
+    className="bg-white rounded-xl h-[250px] w-[500px] shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:bg-red-100"
   >
     <div className="flex flex-row gap-4 p-6">
       <img
@@ -44,13 +44,19 @@ function App() {
 
         <div className="mt-2">
           {some.emails.map((email, i) => (
-            <span key={i} className="mt-1 flex justify-between text-[16px] font-medium text-blue-700 ">
-              <span> {email} </span>
-              <button name={email}  onClick={handle} className='h-fit w-fit bg-red-400 text-white h-4 w-4 justify-center'>
-                copy
-              </button>
-            
-            </span>
+            <div
+            key={i}
+            className="flex items-center justify-between bg-gray-100 px-3 py-2 rounded-md text-sm text-blue-800"
+          >
+            <span>{email}</span>
+            <button
+              name={email}
+              onClick={handle}
+              className="bg-red-400 hover:bg-red-200 text-white px-3 py-1 rounded-md text-xs transition-all"
+            >
+              Copy
+            </button>
+          </div>
           ))}
         </div>
 
